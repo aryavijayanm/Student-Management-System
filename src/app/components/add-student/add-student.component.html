@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3 class="heading">ADD STUDENT</h3>
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+<div class="form">
+    <label for="name">student Name</label>
+    <input required class="input-data" type="text" formControlName="studName" id="name" name="name" placeholder="Student name..">
+    <label for="Course">Course</label>
+    <select required placeholder = "Select Course" class="input-data" id="Course" formControlName="courseId" name="Course">
+      <option disabled>Select Course</option>
+      <option *ngFor = "let course of courses" value={{course.id}}>{{course.courseName}}</option>
+    </select>
+  
+    <input class="hover-submit" type="submit" value="Submit">
+    <h4 style="color:rgb(83, 80, 80);" *ngIf="subStatus">Student Added Successfully</h4>
+    <h4 style="color:rgb(83, 80, 80);" *ngIf="errorValid">Please enter the details..</h4>
+</div>
+</form>
+</body>
+</html>

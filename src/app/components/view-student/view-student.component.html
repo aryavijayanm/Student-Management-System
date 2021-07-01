@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h3 class="heading">VIEW STUDENT</h3>
+<table class="table-student">
+  <tr>
+    <th >NAME</th>
+    <th>COURSE</th>
+    <th>EDIT/ DELETE</th>
+  </tr>
+  <tr *ngFor ="let student of students">
+    <td>{{student.studName}}</td>
+    <td>{{student.courseName}}</td>
+    <th><button class="edit-button" (click)="editStudent(student)"  >EDIT</button><button (click)="deleteStudent(student)" class="delete-button">DELETE</button></th>
+  </tr>
+</table>
+
+</body>
+</html>
